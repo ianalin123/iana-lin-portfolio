@@ -25,6 +25,7 @@ interface CS180Project {
   description: string;
   tags: string[];
   icon: typeof Camera;
+  href: string;
 }
 
 const projects: CS180Project[] = [
@@ -36,6 +37,7 @@ const projects: CS180Project[] = [
       "Introduction to computational photography fundamentals. Exploring camera mechanics, exposure, focus, and the relationship between the physical world and digital image formation.",
     tags: ["Photography"],
     icon: Camera,
+    href: "/cs180/project0",
   },
   {
     number: 1,
@@ -45,6 +47,7 @@ const projects: CS180Project[] = [
       "Colorizing the Prokudin-Gorskii Photo Collection. Aligning RGB channels from historical glass plate negatives to produce full-color images of early 20th century Russia.",
     tags: ["Colorizing Images", "Image Alignment"],
     icon: Image,
+    href: "/cs180/project1",
   },
   {
     number: 2,
@@ -54,6 +57,7 @@ const projects: CS180Project[] = [
       "Exploring image frequencies through filtering operations. Gaussian and Laplacian stacks, unsharp masking, hybrid images, and multiresolution blending.",
     tags: ["Image Frequencies", "Filtering", "Blending"],
     icon: Layers,
+    href: "/cs180/project2",
   },
   {
     number: 3,
@@ -63,6 +67,7 @@ const projects: CS180Project[] = [
       "Image warping and mosaicing. Computing homographies, warping images into alignment, and blending them into seamless panoramic mosaics. Both manual and automatic feature matching.",
     tags: ["Image Warping", "Image Mosaicing", "Homography"],
     icon: Combine,
+    href: "/cs180/project3",
   },
   {
     number: 4,
@@ -72,6 +77,7 @@ const projects: CS180Project[] = [
       "Neural Radiance Fields — representing 3D scenes as continuous volumetric functions learned by neural networks. Synthesizing novel views from a sparse set of input photographs.",
     tags: ["Neural Radiance Fields", "Neural Networks", "Plenoptic Functions"],
     icon: Network,
+    href: "/cs180/project4",
   },
   {
     number: 5,
@@ -81,6 +87,7 @@ const projects: CS180Project[] = [
       "Implementing and understanding diffusion models for image generation. From the mathematical foundations of forward/reverse diffusion to practical denoising architectures.",
     tags: ["Diffusion Models", "Neural Networks", "Generative AI"],
     icon: Sparkles,
+    href: "/cs180/project5",
   },
 ];
 
@@ -157,20 +164,21 @@ export default function CS180() {
                   delay={i * 0.1}
                   direction="left"
                 >
-                  <motion.div
-                    className="relative md:ml-16 p-6 md:p-8"
-                    style={{
-                      backgroundColor: "oklch(0.97 0.015 80)",
-                      borderRadius: "20px 12px 18px 14px",
-                      border: "1px solid oklch(0.50 0.20 25 / 0.08)",
-                    }}
-                    whileHover={{
-                      y: -3,
-                      boxShadow:
-                        "0 16px 50px oklch(0.50 0.20 25 / 0.06)",
-                      transition: { duration: 0.3 },
-                    }}
-                  >
+                  <Link href={project.href}>
+                    <motion.div
+                      className="relative md:ml-16 p-6 md:p-8 cursor-pointer"
+                      style={{
+                        backgroundColor: "oklch(0.97 0.015 80)",
+                        borderRadius: "20px 12px 18px 14px",
+                        border: "1px solid oklch(0.50 0.20 25 / 0.08)",
+                      }}
+                      whileHover={{
+                        y: -3,
+                        boxShadow:
+                          "0 16px 50px oklch(0.50 0.20 25 / 0.06)",
+                        transition: { duration: 0.3 },
+                      }}
+                    >
                     {/* Timeline dot */}
                     <div
                       className="absolute -left-[2.35rem] top-8 w-3 h-3 rounded-full hidden md:block"
@@ -249,7 +257,8 @@ export default function CS180() {
                         </span>
                       ))}
                     </div>
-                  </motion.div>
+                    </motion.div>
+                  </Link>
                 </AnimatedSection>
               ))}
             </div>
