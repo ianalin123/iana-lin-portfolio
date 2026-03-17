@@ -18,6 +18,7 @@ interface Project {
   tags: string[];
   icon: typeof Brain;
   highlight?: string;
+  link?: string;
 }
 
 const projects: Project[] = [
@@ -29,6 +30,7 @@ const projects: Project[] = [
     tags: ["OpenAI", "Databricks", "ML Engineering"],
     icon: Cpu,
     highlight: "Shipped to production",
+    link: "https://github.com/ianalin123",
   },
   {
     title: "Brain-powered Spotify",
@@ -38,6 +40,7 @@ const projects: Project[] = [
     tags: ["BCI", "EEG", "Accessibility", "Emotiv"],
     icon: Brain,
     highlight: "BCI prototype",
+    link: "https://github.com/ianalin123",
   },
   {
     title: "ML for Neural Data Classification",
@@ -46,6 +49,7 @@ const projects: Project[] = [
       "Benchmarked SVMs, CNNs, decision trees, and Gaussian classifiers on neural datasets. PCA dimensionality reduction, hyperparameter tuning, the whole pipeline. Rigorous comparison of what actually works.",
     tags: ["SVM", "CNN", "Decision Tree", "Gaussian", "PCA"],
     icon: Network,
+    link: "https://github.com/ianalin123",
   },
   {
     title: "Spiking Neural Networks",
@@ -54,6 +58,7 @@ const projects: Project[] = [
       "NEST Simulator implementation of leaky integrate-and-fire neuron models. Explored synaptic connectivity patterns and temporal dynamics visualization. Computational neuroscience from first principles.",
     tags: ["NEST", "Computational Neuroscience", "Python", "LIF"],
     icon: Zap,
+    link: "https://github.com/ianalin123",
   },
   {
     title: "Formal Arithmetic Realizations",
@@ -63,6 +68,7 @@ const projects: Project[] = [
     tags: ["Z3", "Formal Methods", "SMT", "Supercomputing"],
     icon: FlaskConical,
     highlight: "Published at ISC 2024",
+    link: "https://github.com/ianalin123",
   },
   {
     title: "Spatial Transcriptomics",
@@ -71,6 +77,7 @@ const projects: Project[] = [
       "Trained deep CNN for 3D segmentation of 30GB+ spatial transcriptomics datasets. State-of-the-art performance with custom preprocessing pipeline. Making biology computable.",
     tags: ["PyTorch", "Deep Learning", "Bioimage Analysis", "3D Segmentation"],
     icon: Microscope,
+    link: "https://github.com/ianalin123",
   },
 ];
 
@@ -170,7 +177,10 @@ export default function Technical() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, i) => (
               <AnimatedSection key={project.title} delay={i * 0.1}>
-                <motion.div
+                <motion.a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="h-full p-6 md:p-8 relative overflow-hidden"
                   style={{
                     backgroundColor: "oklch(0.97 0.015 80)",
@@ -249,7 +259,7 @@ export default function Technical() {
                       </span>
                     ))}
                   </div>
-                </motion.div>
+                </motion.a>
               </AnimatedSection>
             ))}
           </div>

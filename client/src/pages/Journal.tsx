@@ -22,15 +22,33 @@ const entries: JournalEntry[] = [
   {
     title: "Pseudo-Social AI Agent Spaces?",
     date: "2025.08.08",
-    content:
-      "I believe that our identities are intrinsically intertwined with how others see us (but the weight of this external feedback is so tricky to parameterize! I think about this a lot.) Lately, I have been often using ChatGPT as a more knowledgeable version of myself, like a sounding board that gives me new insights about aspects of myself. At the same time, I've been thinking about social media as a performative space where our \"online selves\" act out a kind of continuous theatre. So I've been wondering, \"are there platforms where multiple people can make digital clones of themselves and these agents can interact freely, kind of like a pseudo-social social media?\" I have so many thoughts...",
+    content: `I believe that our identities are intrinsically intertwined with the how others see us (but the weight of this external feedback is so tricky parameterize! I think about this a lot.)
+
+Lately, I have recently often using ChatGPT as a more knowledgeable version of myself, like a sounding board that gives me new insights about aspects of myself (either in just typing out what I would say to an agent or in iterating on the responses I receive from the agent)
+
+At the same time, I have been thinking about social media as a performative space where our "online selves" act out a kind of continuous theatre. It is a space shaped both by self-perception and self-audience relationships.
+
+So I have been wondering, "are there platforms where multiple people can make digital clones of themselves and these agents can interact freely, kind of like a pseudo-social social media?" I have so many thoughts...`,
     tags: ["identity", "social media", "ai-agents"],
   },
   {
-    title: "Am I a Scientist or an Artist?",
-    date: "2025.05.15",
-    content:
-      "The question feels less important now. Maybe the categorization itself is the problem. Today I spent equal time debugging a neural network and arranging photos for my Instagram story. Both felt like acts of creation, pattern-seeking, meaning-making. The tools differ, but the underlying drive is the same: understand → create → share → repeat. Science: asking questions about how things work. Art: asking questions about how things feel. Entrepreneurship: asking questions about how things could be better. All three are forms of inquiry. All three require both rigor and intuition.",
+    title: "Reactivating Passion: My Slime Times",
+    date: "2025.07.05",
+    content: "",
+    tags: ["passions", "creativity", "confidence"],
+  },
+  {
+    title: "Identity Fragments",
+    date: "2025.01.12",
+    content: `Am I a scientist who makes art, or an artist who happens to do science? The question feels less important now. Maybe the categorization itself is the problem.
+
+Today I spent equal time debugging a neural network and arranging photos for my Instagram story. Both felt like acts of creation, pattern-seeking, meaning-making. The tools differ, but the underlying drive is the same: understand -> create -> share -> repeat.
+
+- Science: asking questions about how things work
+- Art: asking questions about how things feel
+- Entrepreneurship: asking questions about how things could be better
+
+All three are forms of inquiry. All three require both rigor and intuition.`,
     tags: ["identity", "creativity", "philosophy"],
   },
   {
@@ -163,7 +181,7 @@ export default function Journal() {
                     </h2>
 
                     <p
-                      className="text-sm leading-[1.8] mb-5"
+                      className="text-sm leading-[1.8] mb-5 whitespace-pre-line"
                       style={{ color: "oklch(0.40 0.02 60)" }}
                     >
                       {entry.content}

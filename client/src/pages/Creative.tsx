@@ -43,12 +43,12 @@ const ventures: Venture[] = [
 ];
 
 const photoGrid = [
-  "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=400&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=400&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+  { src: "/creative/IMG_0069.jpg", alt: "Gray cat in Korean cat cafe" },
+  { src: "/creative/IMG_0225.jpg", alt: "NanXun, China water town canals" },
+  { src: "/creative/IMG_0857.jpg", alt: "GuiLin Rice Terrace view from wooden deck" },
+  { src: "/creative/IMG_0414.jpg", alt: "Chinese canal at night with lanterns" },
+  { src: "/creative/IMG_0724.jpg", alt: "Iana with a dog ear peeking through the frame" },
+  { src: "/creative/IMG_0604.jpg", alt: "Orange cat on concrete" },
 ];
 
 export default function Creative() {
@@ -124,7 +124,7 @@ export default function Creative() {
           </AnimatedSection>
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-6">
-            {photoGrid.map((url, i) => (
+            {photoGrid.map((image, i) => (
               <AnimatedSection key={i} delay={i * 0.08}>
                 <motion.div
                   className="relative aspect-square overflow-hidden"
@@ -137,8 +137,8 @@ export default function Creative() {
                   }}
                 >
                   <img
-                    src={url}
-                    alt={`Visual story ${i + 1}`}
+                    src={image.src}
+                    alt={image.alt}
                     className="w-full h-full object-cover"
                   />
                   <div
@@ -168,6 +168,37 @@ export default function Creative() {
       </section>
 
       <SlimeDrip color="oklch(0.85 0.06 15 / 0.1)" flip />
+
+      {/* Ideal Mental Space */}
+      <section className="py-16">
+        <div className="container">
+          <AnimatedSection>
+            <div
+              className="max-w-4xl mx-auto p-8"
+              style={{
+                backgroundColor: "oklch(0.97 0.015 80)",
+                borderRadius: "20px 12px 18px 14px",
+                border: "1px solid oklch(0.50 0.20 25 / 0.08)",
+              }}
+            >
+              <h2
+                className="font-serif text-2xl md:text-3xl font-bold mb-6"
+                style={{ color: "oklch(0.25 0.02 60)" }}
+              >
+                Ideal Mental Space
+              </h2>
+              <div className="aspect-video overflow-hidden rounded-xl">
+                <video className="h-full w-full object-cover" controls autoPlay muted>
+                  <source src="/creative/IMG_5573.MOV" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      <SlimeDrip color="oklch(0.50 0.20 25 / 0.04)" />
 
       {/* Quote */}
       <section className="py-16">
